@@ -33,8 +33,16 @@ NAME                    DESIRED   SUCCESSFUL   AGE
 hello-date-1554321540   1         1            39s
 ```
 
+For Troubleshooting any issues:
+``` shell
+$ kubectl get pods
+
+$ kubectl describe pods <POD_NAME>
+```
+
 ## Sources
 
 * [Volume & Claim](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
 * [Cron Job](https://medium.com/jobteaser-dev-team/kubernetes-cronjob-101-56f0a8ea7ca2)
 * [Cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+* [Troubleshooting](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/)
