@@ -1,0 +1,1 @@
+This directory is created as a volume and logs are written here.

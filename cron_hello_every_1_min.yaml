@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello-date
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello-date
+            image: bash
+            volumeMounts:
+            - name: hello-logs-storage
+              mountPath: "/var/log"
+            command: ["sh"]
+            args: ["-c", "echo $(date) - Hello >> /var/log/hello.log"]
+          volumes:
+          - name: hello-logs-storage
+            persistentVolumeClaim:
+              claimName: hello-logs-volume-claim
+          restartPolicy: OnFailure
